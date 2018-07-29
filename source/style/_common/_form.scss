@@ -1,0 +1,190 @@
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transition: .3s;
+
+  &.active {
+    top: 0;
+  }
+
+  &__inner {
+    width: 70%;
+    padding: 50px;
+    background: $white;
+    position: relative;
+  }
+
+  &__close {
+    width: 30px;
+    height: 30px;
+    background: url(../img/exit.png) no-repeat center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+
+    &-inner {
+      display: flex;
+      align-items: center;
+    }
+
+    & .logo {
+      width: max-content;
+      position: relative;
+    }
+
+    &-text {
+      margin-left: 55px;
+      font: 40px/42px $RR;
+      color: $black;
+      letter-spacing: 2px;
+    }
+  }
+
+  &__middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 67px;
+  }
+
+  &__input-wrap {
+    width: 45%;
+    margin-bottom: 60px;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.48);
+    border-radius: 27px;
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding: 18px 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    z-index: 1;
+
+    &:focus ~ .form__label,
+    &:valid ~ .form__label {
+      top: 6px;
+      font-size: 0;
+    }
+  }
+
+  &__label {
+    height: max-content;
+    opacity: 0.5;
+    font: 20px/22px $RR;
+    color: $black;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 30px;
+    margin: auto;
+    transition: 300ms ease all;
+  }
+
+  &__textarea-wrap {
+    @extend .form__input-wrap;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  
+  &__textarea {
+    @extend .form__input;
+    height: 55px;
+    resize: none;
+  }
+
+  &__checks-heading {
+    margin-bottom: 45px;
+    font: 30px/32px $RR;
+    color: $black;
+    letter-spacing: 1.5px;
+    text-align: center;
+  }
+
+  &__checks-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__checks-label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__checks {
+    position: absolute;
+    top: 0;
+    left: -99999px;
+    &:checked + .form__checks-elem {
+
+      &:after {
+        width: 100%;
+        height: 100%;
+        background-color: $orange;
+        background-image: linear-gradient(81deg, $orange 0%, #ff6c00 100%)
+      }
+    }
+
+    &-elem {
+      width: 20px;
+      height: 20px;
+      margin-right: 12px;
+      border-radius: 50%;
+      box-shadow: 0 3px 8px 1px rgba(0, 0, 0, 0.48);
+      position: relative;
+      transition: all .3s;
+      display: inline-block;
+      vertical-align: middle;
+
+      &:after {
+        display: block;
+        content: '';
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        transition: all .3s;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+      }
+    }
+
+    &-text {
+      display: inline-block;
+      font: 25px/27px $RB;
+      color: $black;
+      letter-spacing: 1.25px;
+      vertical-align: middle;
+    }
+  }
+
+  & .btn {
+    border: none;
+    cursor: pointer;
+  }
+}

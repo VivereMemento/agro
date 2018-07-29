@@ -1,0 +1,10 @@
+header.header
+	include ./_form.pug
+	+logo('AgroSyndicate', "logo.png", "logo_js")
+	.header__part
+		.header__heading
+			| Lorem ipsum dolor sit amet
+		a#open-form.btn(href='#')
+			| More
+		.header__scroll-btn-wrap
+			+scroll-btn('', 'animate-presentation')

@@ -1,0 +1,29 @@
+.form
+    form.form__inner
+        .form__close
+        .form__top
+            .form__top-inner
+                +logo('AgroSyndicate', "form-logo.png", "")
+                .form__top-text
+                    | Lorem ipsum <br/> dolor sit amet
+        .form__middle
+            - var inputs = ['First name', 'Last name', 'E-mail', 'Phone'];
+                each input in inputs
+                    .form__input-wrap
+                        input.form__input(type='text' required)
+                        label.form__label #{input}
+            .form__textarea-wrap
+                textarea.form__textarea(required)
+                .form__label Share your problem
+        .form__bottom
+            .form__checks-heading
+                | Send me info about:
+
+            - var checks = ['Avto Docs', 'Agro Trade', 'AgroSyndicate Club', 'Finchain', 'Logistics'];
+            .form__checks-wrap
+                each check in checks
+                    label.form__checks-label
+                        input.form__checks(type='checkbox' required)
+                        .form__checks-elem
+                        .form__checks-text #{check}
+                button.btn(type='submit') Send

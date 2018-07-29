@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/header-bg.jpg) no-repeat left top 100%;
+  background-size: cover;
+  position: relative;
+  top: 0;
+  transition: .3s;
+
+  &.hidden {
+    top: 100vh;
+    left: 0;
+  }
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 57%;
+    background: url(../img/header-bg.jpg) no-repeat left bottom;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__heading {
+    margin-bottom: 50px;
+    font: 90px/92px $RB;
+    color: $white;
+    letter-spacing: 4.5px;
+    text-align: center;
+  }
+
+  &__scroll-btn-wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+  }
+}
