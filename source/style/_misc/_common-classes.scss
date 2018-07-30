@@ -20,11 +20,12 @@ $light-green: #c1de97;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 2;
-  transition: .3s;
+  z-index: 3;
+
 
   &.showed {
     top: 0;
+    transition: .5s;
   }
 }
 

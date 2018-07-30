@@ -1,31 +1,7 @@
 .contacts {
   width: 100%;
   height: 100vh;
-  position: relative;
   overflow: hidden;
-
-  &:before,
-  &:after {
-    display: block;
-    content: '';
-    width: 100px;
-    position: absolute;
-    left: -10px;
-  }
-
-  &:before {
-    height: 27%;
-    background: $white;
-    top: 22%;
-    left: 20px;
-    z-index:1;
-  }
-
-  &:after {
-    height: 50%;
-    border: 5px solid $orange;
-    top: 10%;
-  }
 
   &__inner {
     display: flex;
@@ -33,11 +9,42 @@
     position: relative;
   }
 
+  &__frame {
+    width: 300px;
+    height: 50%;
+    position: absolute;
+    top: 50px;
+    left: -15%;
+
+    &:before,
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 100px;
+      position: absolute;
+      right: 0;
+    }
+
+    &:before {
+      border-top: 5px solid $orange;
+      border-right: 5px solid $orange;
+      background: $white;
+      top: 0;
+    }
+
+    &:after {
+      border-bottom: 5px solid $orange;
+      border-right: 5px solid $orange;
+      bottom: 0;
+    }
+  }
+
   &__left {
     display: flex;
     width: 83%;
     height: 100%;
-    padding-top: 220px;
+    padding-top: 100px;
     padding-left: 100px;
     position: relative;
   }
@@ -88,7 +95,7 @@
   }
 
   &__dot {
-    margin-top: 150px;
+    margin-top: 50px;
 
     &-item {
       display: flex;
@@ -135,5 +142,6 @@
     position: absolute;
     bottom: 50px;
     left: -23%;
+    z-index: 2;
   }
 }

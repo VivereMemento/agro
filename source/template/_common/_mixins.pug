@@ -13,7 +13,7 @@ mixin btn-up
 
 mixin scroll-btn(value, id)
 	if (value === 'black')
-		div(id=id class='scroll-btn scroll-btn_black')
+		div(id=id class='scroll-btn scroll-btn_black scroll-btn-js')
 			.scroll-btn__content
 				.scroll-btn__circles
 					.scroll-btn__circles-big
@@ -25,13 +25,13 @@ mixin scroll-btn(value, id)
 					.scroll-btn__circles-big
 					.scroll-btn__circles-small
 	else if (value === 'up-orange')
-		div(id=id class='scroll-btn.scroll-btn_up scroll-btn_orange')
+		div(id=id class='scroll-btn scroll-btn_up scroll-btn_orange')
 			.scroll-btn__content
 				.scroll-btn__circles
 					.scroll-btn__circles-big
 					.scroll-btn__circles-small
 	else
-		div(id=id class='scroll-btn')
+		div(id=id class='scroll-btn scroll-btn-js')
 			.scroll-btn__content
 				.scroll-btn__circles
 					.scroll-btn__circles-big
@@ -57,7 +57,6 @@ mixin dots(value, index)
 								| #{value}
 					else
 						.dots__item
-		+scroll-btn
 //- ----------- checkbox -------------- //
 
 mixin checkbox(text)
